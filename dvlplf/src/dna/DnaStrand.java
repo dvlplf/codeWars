@@ -1,3 +1,5 @@
+package dna;
+
 public class DnaStrand {
     public static String makeComplement(String dna) {
         char[] result = dna.toCharArray();
