@@ -1,22 +1,19 @@
 public class DnaStrand {
     public static String makeComplement(String dna) {
-        String result = "";
-        for (int i = 0; i < dna.length(); i++) {
-            switch (dna.charAt(i)) {
-                case 'A':
-                    result += "T";
-                    break;
-                case 'T':
-                    result += "A";
-                    break;
-                case 'C':
-                    result += "G";
-                    break;
-                case 'G':
-                    result += "C";
-                    break;
-            }
+        char[] result = dna.toCharArray();
+        for (int i = 0; i < result.length; i++) {
+            result[i] = getComplement(result[i]);
         }
-        return result;
+        return new String(result);
+    }
+
+    private static char getComplement(char c) {
+        switch (c){
+            case 'A': return 'T';
+            case 'T': return 'A';
+            case 'C': return 'G';
+            case 'G': return 'C';
+        }
+        return c;
     }
 }
